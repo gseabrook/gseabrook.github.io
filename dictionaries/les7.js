@@ -1,0 +1,22 @@
+export default {
+	"Door weer en wind": "Come rain or shine",
+	"Natuurmonumenten": "Dutch nature organisation",
+	"De calamiteit": "Calamity",
+	"Aan de horizon": "On the horizon",
+	"Het baken": "Beacon / Warning Light",
+	"Dik": "More than",
+	"Al met al": "Everything together / All in all",
+	"Royaal": "Generously",
+	"Profiteren van": "Take advantage of",
+	"Wat dat aangaat": "What that means",
+	"Bevoegd": "Qualified",
+	"Opschuiven": "To move up",
+	"De stranding": "Stranding / stuck",
+	"Iets aankaarten": "To address something",
+	"De ramp": "Disaster",
+	"Weeldening": "Luxurious",
+	"De Lepelaar": "Spoonbill (Type of bird)",
+	"Een discussie voeren": "Have a discussion",
+	"De marge": "Margin",
+	"Rijkswaterstaat": "Organisation that manages water and traffic"
+};

@@ -1,0 +1,21 @@
+export default {
+	"Plaatsmaken": "To make space",
+	"Gezin": "Family",
+	"Gedrag": "Behaviour",
+	"Ondanks": "Despite",
+	"Eerdere": "Earlier",
+	"Voorspellingen": "Predictions",
+	"Nogal": "Quite",
+	"Stellen": "To state",
+	"Beleggen": "To invest",
+	"Bereiden": "To prepare",
+	"Gerecht": "Dish",
+	"Nuttigen": "To consume",
+	"Rabarber": "Rhubarb",
+	"Bliksem": "Lightning",
+	"Vergetelheid": "Forgetfulness",
+	"Erfgoed": "Heritage",
+	"Geval": "Case",
+	"Blijken": "To turn out",
+	"Gewoon": "Ordinary"
+};

@@ -1,0 +1,22 @@
+{
+  "name": "word-learner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "shuffle.js",
+  "scripts": {
+    "serve": "./node_modules/http-server/bin/http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gseabrook/word-learner.git"
+  },
+  "author": "Graham Seabrook",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gseabrook/word-learner/issues"
+  },
+  "homepage": "https://github.com/gseabrook/word-learner#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
