@@ -1,0 +1,20 @@
+export default {
+	"behoren tot": "belong to",
+	"De Stapel": "Pile",
+	"Enig": "Any",
+	"Op prijs stellen": "Appreciate",
+	"De Bezitter": "Owner",
+	"De omgeving": "Area",
+	"Overbodig": "Unnecessary",
+	"De Tocht": "Trip",
+	"Ontvangen": "To recieve",
+	"De vergadering": "Meeting",
+	"Afhankelijk van": "Depending on",
+	"Het kenmerk": "Characteristic",
+	"De verhouding": "Ratio",
+	"Het Platteland": "Countryside",
+	"Aanbieden": "To offer",
+	"Klikken": "Click",
+	"De gewoonte": "Habit",
+	"Deelnemen aan": "Join"
+};

@@ -1,0 +1,20 @@
+export default {
+	"Het Verband": "The Connection",
+	"De stemming": "Mood",
+	"Enkel": "Only",
+	"Verschijnen": "To appear",
+	"Geheel": "Whole",
+	"Beïnvloeden": "To Influence",
+	"Zich iets aantrekken van": "Something about",
+	"Voorkomen": "To occur",
+	"de Liefhebber": "The Lover",
+	"Andersom": "Reversed",
+	"Trouwens": "Besides",
+	"Zeldzaam": "Rare",
+	"Het humeur": "The mood", 
+	"Aardig": "Nice",
+	"Het omgekeerde": "The reverse",
+	"Gelden": "To Apply",
+	"Het feit": "The fact",
+	"Nauwelijks": "Barely"
+};

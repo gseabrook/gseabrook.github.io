@@ -11,12 +11,14 @@ import { shuffle } from './shuffle.js';
 	let subset = [], copy = [];
 	let currentWord = undefined;
 	let iteration = 0;
-	let size = 5;
+	let size = parseInt(Object.keys(dictionary).length / 4);
 
 
 	window.speechSynthesis.onvoiceschanged = () => {
 		window.voiceNL = window.speechSynthesis.getVoices().find(v => v.lang === "nl-NL");
 		window.voiceGB = window.speechSynthesis.getVoices().find(v => v.lang === "en-GB");
+
+		document.getElementById("total").innerHTML = Object.keys(dictionary).length * 2;
 
 		initialize();
 	};
@@ -52,6 +54,11 @@ import { shuffle } from './shuffle.js';
 				addWords();
 			}
 		}
+
+		if (document.getElementById("timed").checked){
+			window.answer(true);
+			window.setTimeout(nextWord, 4000);
+		}
 	}
 
 	function speak(word, voice){
@@ -66,7 +73,7 @@ import { shuffle } from './shuffle.js';
 		answerDiv.classList.add("invisible");
 	}
 
-	window.answer = () => {
+	window.answer = (silent) => {
 		let answer;
 		let utterance = new SpeechSynthesisUtterance();
 		if (currentWord.lang === 'nl-NL'){
@@ -77,7 +84,9 @@ import { shuffle } from './shuffle.js';
 			utterance.voice = window.voiceNL;
 		}
 		utterance.text = answer;
-		window.speechSynthesis.speak(utterance);
+		if (!silent) {
+			window.speechSynthesis.speak(utterance);
+		}
 		document.getElementById("answer").innerHTML = answer;
 		document.getElementById("answer").classList.remove("invisible");
 	}
@@ -87,6 +96,7 @@ import { shuffle } from './shuffle.js';
 		subset.push(...newWords.map(w => wordToUtterance(w, window.voiceNL)));
 		subset.push(...newWords.map(w => dictionary[w]).map(w => wordToUtterance(w, window.voiceGB)));
 		copy = subset.slice();
+		document.getElementById("words").innerHTML = copy.length;
 		shuffle(copy);
 	}
 

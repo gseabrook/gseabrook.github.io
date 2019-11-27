@@ -1,0 +1,22 @@
+export default {
+	"Tekenen": "To sign",
+	"Streng": "Strict",
+	"Uitgesproken": "Outspoken",
+	"Wennen aan": "To Get used to",
+	"Verzamelen": "To Collect",
+	"Vestigen zich in": "To settle",
+	"Heersen": "Prevailing",
+	"Opgroeien": "To grow up",
+	"Opmerkelijk": "Remarkable",
+	"Enerzijds...anderzijds": "On one hand, on the other hand",
+	"Overblijven": "To Remain",
+	"Afraden": "To discourage",
+	"De Opvoeding": "Upbringing",
+	"Het gezag": "Authority",
+	"Uiten zich": "To Express",
+	"Qua": "For the",
+	"De ruimte": "Room",
+	"Bestrijden": "To Oppose",
+	"Het beleid": "Policy",
+	"Betreffen": "To Affect"
+};
