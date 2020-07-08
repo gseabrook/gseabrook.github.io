@@ -4,7 +4,12 @@ import { shuffle } from './shuffle.js';
 
 	const lessonNumber = new URL(window.location).searchParams.get("les"); 
 
-	let module = await import(`./dictionaries/les${lessonNumber}.js`);
+	let module;
+	try {
+		module = await import(`./dictionaries/les${lessonNumber}.js`);
+	} catch (err) {
+		module = await import(`./dictionaries/${lessonNumber}.js`);
+	}
 	const dictionary = module.default;
 	
 	const shuffled = {};
@@ -61,11 +66,6 @@ import { shuffle } from './shuffle.js';
 		}
 	}
 
-	function speak(word, voice){
-		let utterance = new SpeechSynthesisUtterance(currentWord);
-		utterance.voice = voice;
-		window.speechSynthesis.speak(utterance);
-	}
 
 	function hideAnswerDiv() {
 		let answerDiv = document.getElementById("answer");

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Word Learner</title>
+	<link rel="stylesheet" 
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+		crossorigin="anonymous"/>
+	<style>
+		body {
+			background-color: lightgrey;
+			padding: 1%;
+		}
+		.lesson-row {
+			height: 250px;
+			line-height: 250px;
+			text-align: center;
+		}
+		.lesson-row.row-red {
+			color: white;
+		}
+		.lesson-row.row-white {
+			background-color: white;
+		}
+		.lesson-row.row-white a {
+			color: black;
+		}
+		.lesson-row.row-blue {
+			background-color: blue;
+			color: white;
+		}
+		.lesson-row a:not(disabled) {
+			color:white;
+		}
+		.lesson-row button.disabled {
+			background-color: grey;
+			opacity: 0.2;
+			cursor: default;
+		}
+	</style>
+	<script nomodule>
+		location.href = 'unsupportedBrowser.html';
+	</script>
+</head>
+<body>
+	<div class="container">
+	  <div class="row lesson-row row-red">
+    	<button onclick="location.href = 'lesson.html?les=6'" class="btn btn-danger col-sm">
+	    	Les 6
+		</button>
+	    <button onclick="location.href = 'lesson.html?les=7'" class="btn btn-danger col-sm">
+	    	Les 7
+	    </button>
+	    <button onclick="location.href = 'lesson.html?les=8'" class="btn btn-danger col-sm">
+	    	Les 8
+	    </button>
+	  </div>
+	  <div class="row lesson-row row-white">
+	    <button onclick="location.href = 'lesson.html?les=9'" class="btn col-sm">
+	    	Les 9
+	    </button>
+	    <button onclick="location.href = 'lesson.html?les=3_henrik'" class="btn col-sm">
+    		Les 3 - Henrik
+    	</button>
+	    <button onclick="location.href = 'lesson.html?les=4_henrik'" class="btn col-sm">
+    		Les 4 - Henrik
+    	</button>
+	  </div>
+	  <div class="row lesson-row row-blue">
+	    <button onclick="location.href = 'lesson.html?les=5_henrik'" class="btn col-sm">
+    		Les 5 - Henrik
+    	</button>
+		<button onclick="location.href = 'lesson.html?les=6_henrik'" class="btn col-sm">
+    		Les 6 - Henrik
+    	</button>
+		<button onclick="location.href = 'lesson.html?les=7_henrik'" class="btn col-sm">
+    		Les 7 - Henrik
+    	</button>
+	  </div>
+	</div>
+</body>

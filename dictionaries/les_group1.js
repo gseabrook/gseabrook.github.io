@@ -14,7 +14,7 @@ export default {
 	"Afrekenen": "To Pay",
 	"Vieren": "To Celebrate",
 	"Tegenkomen": "To meet",
-	"Lukken": "To work",
+	"Lukken": "To succeed",
 	"Gauw": "Quickly",
 	"Blijven": "To Stay",
 	"Wensen": "To wish"

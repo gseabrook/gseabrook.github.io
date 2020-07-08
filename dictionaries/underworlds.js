@@ -1,0 +1,23 @@
+export default {
+	"Kaarten": "Cards",
+	"Verdien": "To earn",
+	"Verkrijgen": "To obtain",
+	"Betrekkelijk": "Relatively",
+	"Vervolgens": "Thereafter",
+	"Bepalen": "To determine",
+	"Neergelegd": "To put down",
+	"Zodra": "As soon",
+	"Tegels": "Tiles",
+	"Afspelen": "To play out",
+	"Ronde": "Round",
+	"Bewegen": "To move",
+	"Bijbehorende": "Corresponding",
+	"Leggen": "To Lay",
+	"Aanvallen": "To attack",
+	"Plaatsen": "To place",
+	"Getal": "Number",
+	"Schade": "Damage",
+	"Waarde": "Value",
+	"Rollen": "To roll",
+	"Verdediger": "Defender"
+};
