@@ -18,10 +18,25 @@ import { shuffle } from './shuffle.js';
 	let iteration = 0;
 	let size = parseInt(Object.keys(dictionary).length / 4);
 
+	window.setTimeout(() => {
+		if (!window.voiceGB) {
+			console.log("Voice not set, calling getVoices");
+			window.speechSynthesis.getVoices();
+		}
+	}, 3000);
 
 	window.speechSynthesis.onvoiceschanged = () => {
 		window.voiceNL = window.speechSynthesis.getVoices().find(v => v.lang === "nl-NL");
 		window.voiceGB = window.speechSynthesis.getVoices().find(v => v.lang === "en-GB");
+
+		if (!window.voiceGB) {
+			window.voiceGB = window.speechSynthesis.getVoices().find(v => v.lang === "en_GB");			
+		}
+
+		if (!window.voiceNL) {
+			console.log("Couldn't find Dutch voice, using English instead");
+			window.voiceNL = window.voiceGB;
+		}
 
 		document.getElementById("total").innerHTML = Object.keys(dictionary).length * 2;
 
