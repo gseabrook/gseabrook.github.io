@@ -91,11 +91,11 @@ import { shuffle } from './shuffle.js';
 	window.answer = (silent) => {
 		let answer;
 		let utterance = new SpeechSynthesisUtterance();
+		answer = dictionary[currentWord.text] || invertObject(dictionary)[currentWord.text];
+
 		if (currentWord.lang === 'nl-NL'){
-			answer = dictionary[currentWord.text];
 			utterance.voice = window.voiceGB;
 		} else {
-			answer = Object.entries(dictionary).find(entry => entry[1] === currentWord.text)[0];
 			utterance.voice = window.voiceNL;
 		}
 		utterance.text = answer;
@@ -120,5 +120,9 @@ import { shuffle } from './shuffle.js';
 		utterance.voice = voice;
 		utterance.lang = voice.lang;
 		return utterance;
+	}
+
+	function invertObject(obj) {
+		return Object.assign({}, ...Object.entries(obj).map(([a,b]) => ({ [b]: a })))
 	}
 })();
