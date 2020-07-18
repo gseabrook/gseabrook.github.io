@@ -3,6 +3,7 @@ import { shuffle } from './shuffle.js';
 (async () => {
 
 	const lessonNumber = new URL(window.location).searchParams.get("les"); 
+	var noSleep = new NoSleep();
 
 	let module;
 	try {
@@ -58,6 +59,7 @@ import { shuffle } from './shuffle.js';
 		addWords();
 	}
 	window.nextWord = () => {
+		noSleep.enable();
 		currentWord = copy.pop();
 		
 		let currentWordDiv = document.getElementById("word")
@@ -70,6 +72,7 @@ import { shuffle } from './shuffle.js';
 		if (copy.length == 0) {
 			if (subset.length === (Object.keys(dictionary).length) * 2) {
 				window.speechSynthesis.speak(new SpeechSynthesisUtterance("You have finished, well done"));	
+				noSleep.disable();
 			} else {
 				addWords();
 			}

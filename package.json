@@ -18,5 +18,8 @@
   "homepage": "https://github.com/gseabrook/word-learner#readme",
   "devDependencies": {
     "http-server": "^0.12.3"
+  },
+  "dependencies": {
+    "nosleep.js": "^0.11.0"
   }
 }
