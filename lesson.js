@@ -27,18 +27,8 @@ import { shuffle } from './shuffle.js';
 	}, 3000);
 
 	window.speechSynthesis.onvoiceschanged = () => {
-		window.voiceNL = window.speechSynthesis.getVoices().find(v => v.lang === "nl-NL");
-		window.voiceGB = window.speechSynthesis.getVoices().find(v => v.lang === "en-GB");
-
-		if (!window.voiceGB) {
-			window.voiceGB = window.speechSynthesis.getVoices().find(v => v.lang === "en_GB");			
-		}
-
-		if (!window.voiceNL) {
-			console.log("Couldn't find Dutch voice, using English instead");
-			window.voiceNL = window.voiceGB;
-		}
-
+		window.voiceNL = window.speechSynthesis.getVoices().find(v => v.lang.indexOf('nl') > -1);
+		window.voiceGB = window.speechSynthesis.getVoices().find(v => v.lang.indexOf('GB') > -1);
 		document.getElementById("total").innerHTML = Object.keys(dictionary).length * 2;
 
 		initialize();
