@@ -17,7 +17,6 @@ import { shuffle } from './shuffle.js';
 	let subset = [], copy = [];
 	let currentWord = undefined;
 	let iteration = 0;
-	let size = parseInt(Object.keys(dictionary).length / 4);
 
 	window.setTimeout(() => {
 		if (!window.voiceGB) {
@@ -34,8 +33,14 @@ import { shuffle } from './shuffle.js';
 		initialize();
 	};
 
-	function initialize() {			
+	function initialize() {		
+		noSleep.enable();	
 		shuffle(Object.keys(dictionary)).forEach(x => shuffled[x] = dictionary[x]);
+
+		console.log("Starting data");	
+		for (const [key, value] of Object.entries(shuffled)) {
+			console.log(`${key}: ${value}`);
+		}
 
 		window.addEventListener('keydown', (e) => {
 			if (e.key === 'ArrowRight') {
@@ -49,8 +54,11 @@ import { shuffle } from './shuffle.js';
 		addWords();
 	}
 	window.nextWord = () => {
-		noSleep.enable();
 		currentWord = copy.pop();
+
+		if (currentWord) {
+			console.log(`Popped: ${currentWord.text} (${copy.length} remaining)`);
+		}
 		
 		let currentWordDiv = document.getElementById("word")
 		currentWordDiv.innerHTML = currentWord.text;
@@ -70,7 +78,7 @@ import { shuffle } from './shuffle.js';
 
 		if (document.getElementById("timed").checked){
 			window.answer(true);
-			window.setTimeout(nextWord, 4000);
+			window.setTimeout(nextWord, parseInt(document.getElementById('delay').value));
 		}
 	}
 
@@ -100,12 +108,16 @@ import { shuffle } from './shuffle.js';
 	}
 
 	function addWords() {
+		console.log("---Adding words---");
+		let size = parseInt(Object.keys(dictionary).length / parseInt(document.getElementById("chunks").value));
 		let newWords = Object.keys(shuffled).slice(iteration * size, ++iteration * size);
+		console.log(`New Words: ${newWords}`);
 		subset.push(...newWords.map(w => wordToUtterance(w, window.voiceNL)));
 		subset.push(...newWords.map(w => dictionary[w]).map(w => wordToUtterance(w, window.voiceGB)));
 		copy = subset.slice();
 		document.getElementById("words").innerHTML = copy.length;
 		shuffle(copy);
+		console.log(`All words: ${copy.map(x => x.text).join(', ')}. Size: ${copy.length}`);
 	}
 
 	function wordToUtterance(word, voice) {

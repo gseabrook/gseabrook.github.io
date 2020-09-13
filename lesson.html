@@ -25,21 +25,16 @@
 			height: 250px;
 			line-height: 250px;
 		}
-		body {
-			padding: 1%;
+
+		.options {
+			line-height: normal;
 		}
-		d
+
 	</style>
-</head>
+</head>	
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col">
-				<input type="checkbox" id="timed" name="timed">Timed
-				<div>
-					<span id="words"></span> out of <span id="total"></span>
-				</div>
-			</div>
 			<div class="col-9">
 				<div class="row">
 					<button class="btn btn-danger" onclick="nextWord()">Question</button>
@@ -51,11 +46,20 @@
 				<div class="row">
 					<button class="btn btn-primary" onclick="answer()">Answer</button>
 				</div>
-			</div>
-			<div class="col">
-				
+				<div class="options">
+					<input type="checkbox" id="timed" name="timed">Timed <span id="words"></span> out of <span id="total"></span>
+				</div>
+				<div class="options">
+					<input type="number" id="chunks" name="chunks" value="4">Chunks
+				</div>
+				<div class="options">
+					<input type="number" id="delay" name="delay" value="4000">Delay (in milliseconds)
+				</div>
 			</div>
 		</div>
+	</div>
+	<div>
+
 	</div>
 </body>
 </html>
